@@ -8,7 +8,12 @@ public class Sort {
 
     public static void main(String[] args) {
         int [] array = new  int[]{4,2,5,9,0,1,3,6,7,8};
-        bubbleSort(array);
+        /*bubbleSort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }*/
+
+        directSort(array);
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
@@ -28,5 +33,24 @@ public class Sort {
             }
         } while (!finish);
 
+    }
+// Поскольку мы имеем цикла - основной и вложенный -
+// сложность также будет O(n^2), однако технически шагов меньше,
+// т.к. мы сначала отбираем подходящие данные, а уже среди них делаем перемещение.
+// ИТОГОВАЯ СЛОЖНОСТЬ: O(n^2)
+    public static void directSort (int array []){
+        for (int i = 0; i < array.length -1; i++) {
+            int minPosition = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[minPosition]){
+                    minPosition = j;
+                }
+            }
+            if (i != minPosition){
+                int temp = array[i];
+                array[i] = array[minPosition];
+                array[minPosition] = temp;
+            }
+        }
     }
 }
