@@ -35,7 +35,7 @@ public class Seminar2 {
     public static void main(String[] args) {
         int [] arrayTest = new int[]{1,2,3,4,5,6,7,8};
         quickSort(arrayTest, 0, arrayTest.length-1);
-        System.out.println(binarySearch(arrayTest, 7,0, arrayTest.length-1));
+        System.out.println(Search.binarySearch(arrayTest, 7,0, arrayTest.length-1));
         for (int i = 10000; i <= 100000; i = i + 10000) {
             int[] array = new int[i];
             for (int j = 0; j < array.length; j++) {
