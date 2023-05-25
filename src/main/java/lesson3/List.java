@@ -33,6 +33,25 @@ public class List {
         }
     }
 
+    // метод удаления внутри двусвясного списка
+    public void delete (Node node){
+        Node previous = node.previous;
+        Node next = node.next;
+
+        if (previous == null){
+            node.previous = null;
+            head = next;
+        } else {
+            if(next == null){
+                previous.next = null;
+                tail = previous;
+            } else {
+                previous.next = next;
+                next.previous = previous;
+            }
+        }
+    }
+
     // сложность перебора O(n)
     // метод поиска по дносвязному списку
     public Node find(int value){
