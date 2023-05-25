@@ -75,7 +75,7 @@ public class FastSearch {
         }
     }
 
-    private static void heapify(int[] array, int heapSize, int rootIndex) {
+    static void heapify(int[] array, int heapSize, int rootIndex) {
         // метод просеивания двоичной кучи
         int largest = rootIndex; // инициализируем наибольший элемент как корень
         int leftChild = 2 * rootIndex + 1; // левый ребёнок + формула нахождения
