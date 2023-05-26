@@ -26,6 +26,17 @@ public class Seminar3 {
         }
     }
 
+    // реализуем метод поиска элемента в односвязном спиcке
+    // возвращать будем boolean
 
-
+    public boolean ifFind(int value){
+        Node item = head;
+        while (item != null){
+            if(item.value == value){
+                return true;
+            }
+            item = item.next;
+        }
+        return false;
+    }
 }
