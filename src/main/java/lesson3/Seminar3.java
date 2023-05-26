@@ -28,7 +28,6 @@ public class Seminar3 {
 
     // реализуем метод поиска элемента в односвязном спиcке
     // возвращать будем boolean
-
     public boolean ifFind(int value){
         Node item = head;
         while (item != null){
@@ -38,5 +37,35 @@ public class Seminar3 {
             item = item.next;
         }
         return false;
+    }
+
+    // реализуем метод добавления новых элементов в конец списка
+    public void addLast(int value){
+        Node last = new Node();
+        last.value = value;
+        if (head == null){
+            head = last;
+        } else {
+            Node item = head;
+            while (item.next != null){
+                item = item.next;
+            }
+            item.next = last;
+        }
+    }
+
+    // реализуем метод удаления последнего элемента из связанного списка
+    public void deleteLast(){
+        if (head != null){
+            Node item = head;
+            while (item.next != null){
+                if(item.next.next == null){
+                    item.next = null;
+                    return;
+                }
+                item = item.next;
+            }
+            head = null;
+        }
     }
 }
