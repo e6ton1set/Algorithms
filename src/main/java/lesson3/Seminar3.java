@@ -4,6 +4,7 @@ public class Seminar3 {
     // реализуем простой односвязный список.
     // пишем только структуру без методов.
     private Node head;
+    private Node tail;
     private class Node {
         private int value;
         private Node next;
@@ -67,5 +68,23 @@ public class Seminar3 {
             }
             head = null;
         }
+    }
+
+    //релизуем метод разворота односвязного спика
+    public Node revert(){
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node currentNode = head;
+        Node previousNode = null;
+        Node nextNode = null;
+
+        while (currentNode != null) {
+            nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+        }
+        return previousNode;
     }
 }
